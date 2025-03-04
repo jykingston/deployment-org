@@ -1,7 +1,20 @@
 steps:
   - block: "Deploy to staging?"
   - label: "🚀 Deploy to staging"
-    command: "scripts/deploy staging"
+    command: "scripts/deploy.sh"
     if: build.branch == 'main'
     concurrency: 1
     concurrency_group: "eft-sure-deploy-staging"
+
+  - block: "🚀 Deploy to prod?"
+    prompt: "Do you want to promote this build to the prod environment?"
+    branches: "main"
+      fields: 
+        - select: "Type"
+          key: "release-type"
+          default: "prod"
+            options:
+            - label: "Production"
+              value: "prod"
+  - command: scripts/deploy.sh
+    label: ":rocket:"
