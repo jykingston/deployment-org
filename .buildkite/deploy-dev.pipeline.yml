@@ -1,0 +1,7 @@
+steps:
+  - block: "Deploy to dev?"
+  - label: "🚀 Deploy to dev"
+    command: "scripts/deploy dev"
+    if: build.branch == 'main'
+    concurrency: 1
+    concurrency_group: "eft-sure-deploy-dev"

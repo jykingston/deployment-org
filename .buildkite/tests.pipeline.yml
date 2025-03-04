@@ -1,0 +1,18 @@
+steps:
+  - label: "🔨 Run Tests"
+    command: "scripts/tests"
+
+  - wait
+
+  - label: "Concurrency gate"
+    command: "exit 0"
+    concurrency: 1
+    concurrency_group: "eft-sure-deploy-concurrency-gate"
+
+  - wait
+
+  - label: "🚀 Trigger Deployment"
+    trigger: "eft-sure-deployment"
+    if: build.branch == 'main'
+    build:
+      commit: "$BUILDKITE_COMMIT"
