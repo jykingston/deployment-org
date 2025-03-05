@@ -1,15 +1,16 @@
 steps:
-  - block: "Deploy to dev?"
   - label: "🚀 Deploy to dev"
     command: "scripts/deploy.sh"
     if: build.branch == 'main'
     concurrency: 1
     concurrency_group: "eft-sure-deploy-dev"
+    key: "deploy-dev"
 
   - wait: ~
 
   - block: "🚀 Deploy to staging?"
     prompt: "Do you want to promote this build to the staging environment?"
+    depends_on: "deploy-dev"
     branches: 
       - "main"
     fields: 

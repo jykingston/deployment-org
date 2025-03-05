@@ -2,10 +2,10 @@
 steps:
   - label: "🔧 Run Tests"
     command: "scripts/tests.sh"
+    key: "tests"
 
-  - wait
-  
   - block: "Promote this to dev?"
+    depends_on: "tests"
     prompt: "Do you want to promote this build?"
     branches: 
       - "main"
