@@ -1,7 +1,7 @@
 steps:
   - block: "Deploy to prod?"
   - label: "🚀 Deploy to prod"
-    command: "scripts/deploy.sh"
+    command: echo "Deploying to prod"
     if: build.branch == 'main'
     concurrency: 1
     concurrency_group: "eft-sure-deploy-prod"

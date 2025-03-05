@@ -1,6 +1,6 @@
 steps:
   - label: "🚀 Deploy to dev"
-    command: "scripts/deploy.sh"
+    command: echo "Deploying to dev"
     if: build.branch == 'main'
     concurrency: 1
     concurrency_group: "eft-sure-deploy-dev"

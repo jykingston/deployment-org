@@ -2,7 +2,7 @@ steps:
   - block: "Confirm deployment to staging"
 
   - label: "🚀 Deploy to staging"
-    command: "scripts/deploy.sh"
+    command: echo "Deploying to staging"
     if: build.branch == 'main'
     concurrency: 1
     concurrency_group: "eft-sure-deploy-staging"
