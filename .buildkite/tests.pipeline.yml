@@ -6,7 +6,7 @@ steps:
   - wait
   
   - block: "Promote this to dev?"
-    prompt: "Do you want to promote this build to the development environment?"
+    prompt: "Do you want to promote this build?"
     branches: 
       - "main"
     fields: 
