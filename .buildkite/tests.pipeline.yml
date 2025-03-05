@@ -7,7 +7,8 @@ steps:
   
   - block: "Promote this to dev?"
     prompt: "Do you want to promote this build to the development environment?"
-    branches: "main"
+    branches: 
+      - "main"
     soft_fail:
       - exit_status: "*" # This ensures that failing to proceed with the block does not fail the build
       fields: 
