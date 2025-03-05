@@ -11,19 +11,19 @@ steps:
       - "main"
     soft_fail:
       - exit_status: "*" # This ensures that failing to proceed with the block does not fail the build
-      fields: 
-        - text: "Release Name"
-          key: "release-name"
-          hint: "Think of a cool name for this release"
-        - select: "Type"
-          key: "release-type"
-          default: "dev"
-            options:
-            - label: "Development"
-              value: "dev"
-            - label: "Staging"
-              value: "staging"
-            - label: "Production"
-              value: "prod"
+    fields: 
+      - text: "Release Name"
+        key: "release-name"
+        hint: "Think of a cool name for this release"
+      - select: "Type"
+        key: "release-type"
+        default: "dev"
+          options:
+          - label: "Development"
+            value: "dev"
+          - label: "Staging"
+            value: "staging"
+          - label: "Production"
+            value: "prod"
   - command: scripts/deploy.sh
     label: ":rocket:"
