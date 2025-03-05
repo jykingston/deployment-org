@@ -8,7 +8,7 @@ RELEASE_TYPE="$(buildkite-agent meta-data get "release-type")"
 
 # Create a pipeline with your trigger step
 PIPELINE="steps:
-  - trigger: \"eft-sure-deployment-$RELEASE_TYPE\"
+  - trigger: \"eft-sure-$RELEASE_TYPE-deployment\"
     label: \"Trigger deploy to $RELEASE_NAME\"
     build:
       meta_data:
