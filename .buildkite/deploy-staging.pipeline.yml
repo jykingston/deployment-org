@@ -13,8 +13,8 @@ steps:
     - select: "Type"
       key: "release-type"
       default: "prod"
-       options:
-       - label: "Production"
-         value: "prod"
+      options:
+      - label: "Production"
+        value: "prod"
   - command: scripts/deploy.sh
     label: ":rocket:"
