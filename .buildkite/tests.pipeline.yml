@@ -14,16 +14,15 @@ steps:
     fields: 
       - text: "Release Name"
         key: "release-name"
-        hint: "Think of a cool name for this release"
       - select: "Type"
         key: "release-type"
         default: "dev"
-          options:
-          - label: "Development"
-            value: "dev"
-          - label: "Staging"
-            value: "staging"
-          - label: "Production"
-            value: "prod"
+        options:
+        - label: "Development"
+          value: "dev"
+        - label: "Staging"
+          value: "staging"
+        - label: "Production"
+          value: "prod"
   - command: scripts/deploy.sh
     label: ":rocket:"
