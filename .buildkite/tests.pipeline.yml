@@ -10,8 +10,6 @@ steps:
     branches: 
       - "main"
     fields: 
-      - text: "Release Name"
-        key: "release-name"
       - select: "Type"
         key: "release-type"
         default: "dev"
