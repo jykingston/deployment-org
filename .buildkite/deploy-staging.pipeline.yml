@@ -6,9 +6,12 @@ steps:
     concurrency: 1
     concurrency_group: "eft-sure-deploy-staging"
 
+  - wait: ~
+
   - block: "🚀 Deploy to prod?"
     prompt: "Do you want to promote this build to the prod environment?"
-    branches: "main"
+    branches: 
+      - "main"
     fields: 
     - select: "Type"
       key: "release-type"
